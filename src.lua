@@ -1254,13 +1254,13 @@ function Library:tab(options)
 			lastTab[2]:tween{BackgroundTransparency = 0.15}
 			lastTab[1].Visible = true
 			selectedTab = lastTab[2]
-			Library.UrlLabel.Text = Library.Url .. "/" .. lastTab[3]:lower()
+			Library.UrlLabel.Text = Library.Url .. ":" .. lastTab[3]
 		else
 			tab.Visible = false
 			lastTab[2]:tween{BackgroundTransparency = 0.15}
 			lastTab[1].Visible = true
 			selectedTab = lastTab[2]
-			Library.UrlLabel.Text = Library.Url .. "/" .. lastTab[3]:lower()
+			Library.UrlLabel.Text = Library.Url .. ":" .. lastTab[3]
 		end
 	end)
 
