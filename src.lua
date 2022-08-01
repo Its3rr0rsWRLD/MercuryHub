@@ -443,7 +443,7 @@ function Library:create(options)
 
 
 
-	if options.Link:sub(-1, -1) == ":" then
+	if options.Link:sub(-1, -1) == "" then
 		options.Link = options.Link:sub(1, -2)
 	end
 
@@ -739,7 +739,7 @@ function Library:create(options)
 			selectedTab = homeButton
 			homePage.Visible = true
 			homeButton.BackgroundTransparency = 0
-			Library.UrlLabel.Text = Library.Url .. ":Home"
+			Library.UrlLabel.Text = "Home"
 		end)
 	end
 
@@ -1157,7 +1157,7 @@ function Library:tab(options)
 			selectedTab = tabButton
 			tab.Visible = true
 			tabButton.BackgroundTransparency = 0
-			Library.UrlLabel.Text = Library.Url .. ":" .. options.Name
+			Library.UrlLabel.Text = options.Name
 		end)
 
 		quickAccessButton.MouseEnter:connect(function()
@@ -1184,7 +1184,7 @@ function Library:tab(options)
 				selectedTab = tabButton
 				tab.Visible = true
 				tabButton.BackgroundTransparency = 0
-				Library.UrlLabel.Text = Library.Url .. ":" .. options.Name
+				Library.UrlLabel.Text = options.Name
 			end
 		end)
 	end
@@ -1247,20 +1247,20 @@ function Library:tab(options)
 			self.homePage.Visible = true
 			self.homeButton:tween{BackgroundTransparency = 0.15}
 			selectedTab = self.homeButton
-			Library.UrlLabel.Text = Library.Url .. ":Home"	
+			Library.UrlLabel.Text = "Home"	
 		elseif tabButton == lastTab[2] then
 			lastTab = visible[#visible-1]
 			tab.Visible = false
 			lastTab[2]:tween{BackgroundTransparency = 0.15}
 			lastTab[1].Visible = true
 			selectedTab = lastTab[2]
-			Library.UrlLabel.Text = Library.Url .. ":" .. lastTab[3]
+			Library.UrlLabel.Text = lastTab[3]
 		else
 			tab.Visible = false
 			lastTab[2]:tween{BackgroundTransparency = 0.15}
 			lastTab[1].Visible = true
 			selectedTab = lastTab[2]
-			Library.UrlLabel.Text = Library.Url .. ":" .. lastTab[3]
+			Library.UrlLabel.Text = lastTab[3]
 		end
 	end)
 
