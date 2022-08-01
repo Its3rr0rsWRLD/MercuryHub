@@ -443,7 +443,7 @@ function Library:create(options)
 
 
 
-	if options.Link:sub(-1, -1) == "/" then
+	if options.Link:sub(-1, -1) == ":" then
 		options.Link = options.Link:sub(1, -2)
 	end
 
