@@ -407,7 +407,7 @@ end
 
 local updateSettings = function() end
 
-function Library:set_status(txt)
+function Library:Status(txt)
 	self.statusText.Text = txt
 end
 
