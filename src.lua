@@ -672,8 +672,10 @@ function Library:create(options)
 		AnchorPoint = Vector2.new(0, .5),
 		BackgroundTransparency = 1,
 		TextSize = 14,
+		Text = options.Name,
+		Position = UDim2.new(0, 25, 0.5, 0),
 		TextXAlignment = Enum.TextXAlignment.Left,
-		Size = UDim2.new(1, -45, 0.5, 0),/
+		Size = UDim2.new(1, -45, 0.5, 0),
 		Font = Enum.Font.SourceSans,
 		TextTruncate = Enum.TextTruncate.AtEnd
 	})
