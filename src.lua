@@ -614,7 +614,7 @@ function Library:create(options)
 		Position = UDim2.new(0, 26, 0.5, 0),
 		BackgroundTransparency = 1,
 		Size = UDim2.new(1, -30, .6, 0),
-		Text = options.Link .. ":Home",
+		Text = "Home",
 		Theme = {TextColor3 = "WeakText"},
 		TextSize = 14,
 		TextScaled = false,
