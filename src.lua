@@ -430,7 +430,7 @@ function Library:create(options)
 	end
 
 	options = self:set_defaults({
-		Name = "Mercury",
+		Name = "Mercury Hub",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
 		Link = "https://github.com/deeeity/mercury-lib"
@@ -450,6 +450,12 @@ function Library:create(options)
 	if options.Theme.Light then
 		self.darken, self.lighten = self.lighten, self.darken
 	end
+
+    if options.Lock == true then
+        if not game.Players.LocalPlayer.PlayerID == options.PlayerID then
+            return
+        end
+    end
 
 	self.CurrentTheme = options.Theme
 
@@ -3481,12 +3487,6 @@ function Library:textbox(options)
 	end
 
 	return methods
-end
-
-function Library:Lock(options)
-    if not game.Players.LocalPlayer.PlayerID == options.PlayerID then
-        return
-    end
 end
 
 function Library:label(options)
