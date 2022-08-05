@@ -3483,6 +3483,12 @@ function Library:textbox(options)
 	return methods
 end
 
+function Library:Lock(options)
+    if not game.Players.LocalPlayer.PlayerID == options.PlayerID then
+        return
+    end
+end
+
 function Library:label(options)
 
 	options = self:set_defaults({
